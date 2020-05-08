@@ -14,7 +14,7 @@ const AppRouter = () => (
             <Switch>        {/* checks each path (to see if it matches the current page) in this order, NotFoundPage only shows up if all the paths don't match */}
                 <Route path="/" component={ExpenseDashboardPage} exact={true} />
                 <Route path="/create" component={AddExpensePage} />
-                <Route path="/edit" component={EditExpensePage} />
+                <Route path="/edit/:id" component={EditExpensePage} />
                 <Route path="/help" component={HelpPage} />
                 <Route component={NotFoundPage} />
             </Switch>

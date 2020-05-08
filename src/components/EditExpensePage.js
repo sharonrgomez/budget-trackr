@@ -1,8 +1,8 @@
 import React from "react";
 
-const EditExpensePage = () => (
+const EditExpensePage = (props) => (
     <div>
-        edit expenses page
+        edit expenses page {props.match.params.id}
     </div>
 );
 
