@@ -1,16 +1,41 @@
-// import React from "react";
-// import ReactDOM from "react-dom";
 import { createStore } from "redux";
 
-const store = createStore((state = { count: 0 }, action) => {
+// action generators - functions that return action objects
+
+const incrementCount = ({ incrementBy = 1 } = {}) => ({
+    type: "INCREMENT",
+    incrementBy
+});
+
+const decrementCount = ({ decrementBy = 1 } = {}) => ({
+    type: "DECREMENT",
+    decrementBy
+});
+
+const setCount = ({ count } = {}) => ({
+    type: "SET",
+    count
+});
+
+const resetCount = () => ({
+    type: "RESET"
+});
+
+// reducers
+
+const countReducer = (state = { count: 0 }, action) => {
     switch (action.type) {
         case "INCREMENT":
             return {
-                count: state.count + 1
+                count: state.count + action.incrementBy
             };
         case "DECREMENT":
             return {
-                count: state.count - 1
+                count: state.count - action.decrementBy
+            };
+        case "SET":
+            return {
+                count: action.count
             };
         case "RESET":
             return {
@@ -19,24 +44,36 @@ const store = createStore((state = { count: 0 }, action) => {
         default:
             return state;
     }
+};
+
+const store = createStore(countReducer);
+
+const unsubscribe = store.subscribe(() => { // keeps track of changes. return value stops the subscription
+    console.log(store.getState());
 });
 
-store.dispatch({
-    type: "INCREMENT"
-});
+console.log("increment 5");
+store.dispatch(incrementCount({
+    incrementBy: 5
+}));
 
-store.dispatch({
-    type: "INCREMENT"
-});
+console.log("increment 1");
+store.dispatch(incrementCount());
 
-store.dispatch({
-    type: "RESET"
-});
+console.log("decrement 5");
+store.dispatch(decrementCount({
+    decrementBy: 5
+}));
 
-store.dispatch({
-    type: "DECREMENT"
-});
+console.log("decrement 1");
+store.dispatch(decrementCount());
 
-console.log(store.getState());
+console.log("set count");
+store.dispatch(setCount({
+    count: 405
+}));
 
-// ReactDOM.render(<p>test</p>, document.getElementById("app"));
+console.log("reset");
+store.dispatch(resetCount());
+
+unsubscribe();
