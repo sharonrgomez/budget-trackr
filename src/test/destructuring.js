@@ -1,5 +1,5 @@
 // ======================
-//  Object Descructuring
+//  Object Destructuring
 // ======================
 
 

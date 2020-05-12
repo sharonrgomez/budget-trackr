@@ -22,6 +22,8 @@ const resetCount = () => ({
 });
 
 // reducers
+// 1. reducers are pure functions (don't rely on outside variables)
+// 2. reducers do not change state or action
 
 const countReducer = (state = { count: 0 }, action) => {
     switch (action.type) {
