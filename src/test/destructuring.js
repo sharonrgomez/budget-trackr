@@ -13,12 +13,12 @@ const person = {
 };
 
 const { name: firstName = "Anonymous", age = "unknown" } = person;
-console.log(`${firstName} is ${age} years old.`)
+console.log(`${firstName} is ${age} years old.`);
 
 const { city, state } = person.location;
 
 if (city && state) {
-    console.log(`${firstName} is from ${city}, ${state}.`)
+    console.log(`${firstName} is from ${city}, ${state}.`);
 }
 
 const book = {
@@ -38,7 +38,7 @@ console.log(publisherName);
 // =======================
 
 
-const address = ["19 Old Mamaroneck", , "New York", 10605];
+const address = ["19 Old Mamaroneck", "White Plains", "New York", 10605];
 const [street, myCity = "some city", myState, zip] = address; // if we didn't need to use street and zip, const [, myCity, myState] = address
 console.log(`You are in ${myCity}, ${myState}`);
 
@@ -65,4 +65,4 @@ const plus = ({ a, b }, c) => {
     return a + b + c;
 }
 
-console.log(plus({ a: 12, b: 3}, 3));;
+console.log(plus({ a: 12, b: 3}, 3));

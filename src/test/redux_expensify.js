@@ -10,9 +10,9 @@ SORT_BY_DATE x
 SORT_BY_AMOUNT x
 SET_START_DATE
 SET_END_DATE
-*/
+*/  
 
-// add expense
+// add expense 
 const addExpense = (
     {
         description = "",
@@ -148,8 +148,14 @@ const getVisibleExpenses = (expenses, { text, sortBy, startDate, endDate }) => {
         const endDateMatch = typeof endDate !== "number" || expense.createdAt <= endDate;
         const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
         return startDateMatch && endDateMatch && textMatch;
+    }).sort((a, b) => {
+        if (sortBy === "date") {
+            return a.createdAt < b.createdAt ? 1 : -1; // show expenses new to old
+        } else if (sortBy === "amount") {
+            return a.amount < b.amount ? 1 : -1; // show expenses high to low
+        }
     });
-}
+};
 
 // store creation
 const store = createStore(
@@ -164,55 +170,3 @@ store.subscribe(() => {
     const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
     console.log(visibleExpenses);
 });
-
-// store.dispatch(setStartDate(321));
-// store.dispatch(setEndDate(123));
-const chocoBar = store.dispatch(addExpense({
-    description: "just a choco bar",
-    amount: 100,
-    createdAt: 1000
-}));
-
-const coffee = store.dispatch(addExpense({
-    description: "just a coffee",
-    amount: 300,
-    createdAt: -1000
-}));
-
-// store.dispatch(removeExpense({
-//     id: coffee.expense.id
-// }));
-
-// store.dispatch(editExpense(chocoBar.expense.id, { amount: 450 }));
-
-store.dispatch(setTextFilter("cof"));
-// store.dispatch(sortByAmount());
-store.dispatch(setStartDate(-1000));
-store.dispatch(setEndDate(1000));
-
-const demoState = {
-    expenses: [{
-        id: "lkajfsdalkfj",
-        description: "January rent",
-        note: "Final payment for this address",
-        amount: 54500,
-        createdAt: 0
-    }],
-    filters: {
-        text: "rent",
-        sortBy: "amount", // or date
-        startDate: undefined,
-        endDate: undefined
-    }
-};
-
-const user = {
-    name: "Sharon",
-    age: 25
-}
-
-// console.log({
-//     location: "White Plains",
-//     ...user,
-//     color: "blue"
-// });

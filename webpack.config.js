@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    entry: "./src/test/redux_expensify.js",
+    entry: "./src/app.js",
     output: {
         path: path.join(__dirname, "public"),
         filename: "bundle.js"
@@ -17,13 +17,15 @@ module.exports = {
                 "style-loader",
                 "css-loader",
                 "sass-loader"
-            ]
+            ] 
         }]
     },
     devtool: "cheap-module-eval-source-map",
     devServer: {
         contentBase: path.join(__dirname, "public"),
-        historyApiFallback: true    // always send user to index.html, let react-router decide which component to render
+        historyApiFallback: true,    // always send user to index.html, let react-router decide which component to render
+        liveReload: true,
+        lazy: false
     },
     mode: "development"
 };
