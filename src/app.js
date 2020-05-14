@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import getVisibleExpenses from "./selectors/expenses";
@@ -14,34 +15,41 @@ const store = configureStore();
 
 store.dispatch(addExpense({
     description: "Water bill",
-    amount: 450,
+    amount: 4500,
     createdAt: 1000
 }));
 
 store.dispatch(addExpense({
-    description: "Gas bill",
-    amount: 500,
-    createdAt: -1000
-}));
-
-const elec = store.dispatch(addExpense({
     description: "Electricity bill",
-    amount: 600,
+    amount: 6000,
     createdAt: -1500
 }));
 
 store.dispatch(addExpense({
-    description: "cuppa joe",
-    amount: 250,
+    description: "May Rent",
+    amount: 25000,
     createdAt: 500
+})); 
+
+store.dispatch(addExpense({
+    description: "Medium Coffee",
+    amount: 250
+})); 
+
+store.dispatch(addExpense({
+    description: "Large Banana Smoothie",
+    amount: 500
 }));
 
-store.dispatch(setTextFilter("bill"));
-store.dispatch(sortByAmount());
-store.dispatch(removeExpense({ id: elec.expense.id }));
+// store.dispatch(sortByAmount());
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
 
-ReactDOM.render(<AppRouter />, document.getElementById("app"));
+const jsx = (
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
+);
+
+ReactDOM.render(jsx, document.getElementById("app"));
