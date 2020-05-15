@@ -4,8 +4,6 @@ import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import getVisibleExpenses from "./selectors/expenses";
-import filterReducer from "./reducers/filters";
-import expenseReducer from "./reducers/expenses";
 import { addExpense, removeExpense, editExpense } from "./actions/expenses";
 import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from "./actions/filters";
 import "./styles/styles.scss";
