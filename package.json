@@ -6,7 +6,8 @@
   "scripts": {
     "server": "live-server public/",
     "build": "webpack",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "test": "jest"
   },
   "author": "Sharon Levin",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^3.5.3",
+    "jest": "^26.0.1",
     "live-server": "^1.2.1",
     "moment": "^2.25.3",
     "normalize.css": "^8.0.1",
