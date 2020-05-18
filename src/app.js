@@ -39,8 +39,6 @@ store.dispatch(addExpense({
     amount: 500
 }));
 
-// store.dispatch(sortByAmount());
-
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 
