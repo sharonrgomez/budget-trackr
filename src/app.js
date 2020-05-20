@@ -5,9 +5,10 @@ import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import getVisibleExpenses from "./selectors/expenses";
 import { addExpense, removeExpense, editExpense } from "./actions/expenses";
-import { setTextFilter, sortByAmount, sortByDate, setStartDate, setEndDate } from "./actions/filters";
 import "./styles/styles.scss";
 import "normalize.css/normalize.css";
+import 'react-dates/initialize';
+import "react-dates/lib/css/_datepicker.css";
 
 const store = configureStore();
 
