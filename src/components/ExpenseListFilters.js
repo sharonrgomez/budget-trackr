@@ -70,4 +70,4 @@ const mapDispatchToProps = (dispatch) => ({
     sortByDate: () => dispatch(sortByDate())
 });
 
-export default connect(mapStateToProps, mapDisPatchToProps)(ExpenseListFilters);
+export default connect(mapStateToProps, mapDispatchToProps)(ExpenseListFilters);
