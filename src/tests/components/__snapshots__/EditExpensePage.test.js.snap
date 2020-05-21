@@ -3,6 +3,14 @@
 exports[`should render editexpensepage correctly 1`] = `
 <Fragment>
   <ExpenseForm
+    expense={
+      Object {
+        "amount": 70000,
+        "createdAt": -432000000,
+        "description": "gas bill",
+        "id": "3",
+      }
+    }
     onSubmit={[Function]}
   />
   <button
