@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
-import getVisibleExpenses from "./selectors/expenses";
-import { addExpense, removeExpense, editExpense } from "./actions/expenses";
 import "./styles/styles.scss";
 import "normalize.css/normalize.css";
 import 'react-dates/initialize';
