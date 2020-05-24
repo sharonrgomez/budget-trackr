@@ -4,7 +4,7 @@ import moment from "moment";
 import numeral from "numeral";
 
 const ExpenseListItem = ({ description, amount, createdAt, id }) => (
-    <div>
+    <React.Fragment>
         <Link to={`/edit/${id}`}>
             <h3>{description}</h3>
         </Link>
@@ -13,7 +13,7 @@ const ExpenseListItem = ({ description, amount, createdAt, id }) => (
             -
             {moment(createdAt).format("MMMM Do, YYYY")}
         </p>
-    </div >
+    </React.Fragment>
 );
 
 export default ExpenseListItem;

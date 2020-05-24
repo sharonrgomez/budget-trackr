@@ -1,12 +1,14 @@
 import React from "react";
 import ExpenseList from "./ExpenseList";
 import ExpenseListFilters from "./ExpenseListFilters";
+import ExpensesSummary from "./ExpensesSummary";
 
 const ExpenseDashboardPage = () => (
-    <div>
+    <React.Fragment>
+        <ExpensesSummary />
         <ExpenseListFilters />
         <ExpenseList />
-    </div>
+    </React.Fragment>
 );
 
 export default ExpenseDashboardPage;
