@@ -1,12 +1,10 @@
-import { addExpense, startAddExpense, editExpense, removeExpense, setExpenses, startSetExpenses } from "../../actions/expenses";
+import { addExpense, startAddExpense, editExpense, removeExpense, setExpenses, startSetExpenses, startRemoveExpense } from "../../actions/expenses";
 import expenses from "../fixtures/expenses";
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import database from "../../firebase/firebase";
 
 const createMockStore = configureMockStore([thunk]);
-
-// jest.setTimeout(10000);
 
 beforeEach((done) => {
     const expensesData = {};
@@ -66,6 +64,22 @@ test("should add expense to database and store", (done) => {
     }).then((snapshot) => {
         expect(snapshot.val()).toEqual(expenseData);
         done();
+    });
+});
+
+test("should remove expense from database and store", (done) => {
+    const store = createMockStore({});
+    const id = expenses[1].id;
+    store.dispatch(startRemoveExpense({ id })).then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: "REMOVE_EXPENSE",
+            id
+        });
+        return database.ref(`expenses/${id}`).once("value").then((snapshot) => {
+            expect(snapshot.val()).toBe(null);
+            done();
+        });
     });
 });
 
