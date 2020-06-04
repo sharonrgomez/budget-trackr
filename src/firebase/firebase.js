@@ -1,4 +1,5 @@
-import * as firebase from "firebase";
+import firebase from "firebase/app";
+import "firebase/database";
 
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -57,12 +58,3 @@ export { firebase, database as default };
 //     database.ref().off("value", onValueChange);
 //     console.log("unsubscribed from data fetching");
 // }, 2000);
-
-// database.ref().update({
-//     "job/company": "google"
-// });
-
-// const name = database.ref().on("value", (snapshot) => {
-//     const val = snapshot.val();
-//     console.log(`${val.name} works at ${val.job.company} in ${val.location.city}`);
-// });

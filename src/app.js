@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
+import { startSetExpenses } from "./actions/expenses";
 import "./styles/styles.scss";
 import "normalize.css/normalize.css";
 import 'react-dates/initialize';
@@ -16,4 +17,8 @@ const jsx = (
     </Provider>
 );
 
-ReactDOM.render(jsx, document.getElementById("app"));
+ReactDOM.render(<p>Loading data...</p>, document.getElementById("app"));
+
+store.dispatch(startSetExpenses()).then(() => {
+    ReactDOM.render(jsx, document.getElementById("app"));
+});
