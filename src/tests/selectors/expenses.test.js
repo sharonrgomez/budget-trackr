@@ -1,6 +1,6 @@
+import moment from "moment";
 import getVisibleExpenses from "../../selectors/expenses";
 import expenses from "../fixtures/expenses";
-import moment from "moment";
 
 test("should filter expenses by text value", () => {
     const filters = {

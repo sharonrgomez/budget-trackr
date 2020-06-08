@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render error for invalid form submission 1`] = `
-<div>
+<Fragment>
   <p>
     Please provide a description and an amount.
   </p>
@@ -127,11 +127,11 @@ exports[`should render error for invalid form submission 1`] = `
       Add Expense
     </button>
   </form>
-</div>
+</Fragment>
 `;
 
 exports[`should render expense form 1`] = `
-<div>
+<Fragment>
   <form
     onSubmit={[Function]}
   >
@@ -254,11 +254,11 @@ exports[`should render expense form 1`] = `
       Add Expense
     </button>
   </form>
-</div>
+</Fragment>
 `;
 
 exports[`should render expense form with fixture data 1`] = `
-<div>
+<Fragment>
   <form
     onSubmit={[Function]}
   >
@@ -381,5 +381,5 @@ exports[`should render expense form with fixture data 1`] = `
       Add Expense
     </button>
   </form>
-</div>
+</Fragment>
 `;

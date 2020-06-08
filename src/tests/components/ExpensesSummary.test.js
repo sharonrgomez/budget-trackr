@@ -1,6 +1,6 @@
 import React from "react";
-import { ExpensesSummary } from "../../components/ExpensesSummary";
 import { shallow } from "enzyme";
+import { ExpensesSummary } from "../../components/ExpensesSummary";
 
 test("should render expenses summary with one expense", () => {
     const wrapper = shallow(<ExpensesSummary expenseCount={1} expensesTotal={2345} />);

@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "firebase": "^7.14.6",
+    "history": "^4.10.1",
     "moment": "^2.25.3",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",

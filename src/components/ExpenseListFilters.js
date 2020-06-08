@@ -1,7 +1,7 @@
 import React from "react";
-import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from "../actions/filters";
 import { connect } from "react-redux";
 import { DateRangePicker } from "react-dates";
+import { setTextFilter, sortByDate, sortByAmount, setStartDate, setEndDate } from "../actions/filters";
 
 export class ExpenseListFilters extends React.Component {
     state = {
@@ -31,7 +31,7 @@ export class ExpenseListFilters extends React.Component {
 
     render() {
         return (
-            <div>
+            <>
                 <input
                     type="text"
                     value={this.props.filters.text}
@@ -53,7 +53,7 @@ export class ExpenseListFilters extends React.Component {
                     isOutsideRange={() => { false }}
                     showClearDates={true}
                 />
-            </div>
+            </>
         );
     }
 }

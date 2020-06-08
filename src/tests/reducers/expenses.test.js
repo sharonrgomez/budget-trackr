@@ -1,6 +1,6 @@
+import moment from "moment";
 import expensesReducer from "../../reducers/expenses";
 import expenses from "../fixtures/expenses";
-import moment from "moment";
 
 test("should set up default expense values", () => {
     const state = expensesReducer(undefined, { type: "@@INIT" });

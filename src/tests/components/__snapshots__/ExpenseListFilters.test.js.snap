@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render expenselistfilters 1`] = `
-<div>
+<Fragment>
   <input
     onChange={[Function]}
     type="text"
@@ -125,11 +125,11 @@ exports[`should render expenselistfilters 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
-</div>
+</Fragment>
 `;
 
 exports[`should render expenselistfilters with given data 1`] = `
-<div>
+<Fragment>
   <input
     onChange={[Function]}
     type="text"
@@ -253,5 +253,5 @@ exports[`should render expenselistfilters with given data 1`] = `
     withFullScreenPortal={false}
     withPortal={false}
   />
-</div>
+</Fragment>
 `;

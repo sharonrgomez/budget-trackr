@@ -4,7 +4,7 @@ import ExpenseListItem from "./ExpenseListItem";
 import selectedExpenses from "../selectors/expenses";
 
 export const ExpenseList = (props) => (
-    <div>
+    <>
         {
             props.expenses.length === 0 ? (
                 <p>You have no expenses.</p>
@@ -14,7 +14,7 @@ export const ExpenseList = (props) => (
                 })
             )
         }
-    </div>
+    </>
 );
 
 const mapStateToProps = (state) => {

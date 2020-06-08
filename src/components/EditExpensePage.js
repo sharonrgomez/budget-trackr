@@ -1,6 +1,6 @@
 import React from "react";
-import ExpenseForm from "./ExpenseForm";
 import { connect } from "react-redux";
+import ExpenseForm from "./ExpenseForm";
 import { startEditExpense, startRemoveExpense } from "../actions/expenses";
 
 export class EditExpensePage extends React.Component {
@@ -16,14 +16,14 @@ export class EditExpensePage extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
+            <>
                 <ExpenseForm
                     expense={this.props.expense}
                     onSubmit={this.onSubmit} />
 
                 <button onClick={this.onRemove}
                 >Remove</button>
-            </React.Fragment>
+            </>
         );
     }
 
