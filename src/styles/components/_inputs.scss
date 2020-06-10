@@ -1,0 +1,42 @@
+.text-input {
+    border: 1px solid $light-gray;
+    border-radius: 2px;
+    font-size: $font-size-lg;
+    font-weight: 300;
+    padding: $s-size;
+    height: 48px;
+    width: 31.5rem;
+    @media (min-width: $desktop-breakpoint) {
+        width: 100%;
+    }
+}
+
+.text-input-form {
+    border-radius: 2px;
+    border: 1px solid $light-gray;
+    font-size: $font-size-lg;
+    font-weight: 300;
+    padding: $s-size;
+    height: 48px;
+}
+
+.select {
+    @extend .text-input;
+    @media (min-width: $desktop-breakpoint) {
+        width: 200px;
+    }
+    @media (max-width: $tab-breakpoint) and (min-width: $desktop-breakpoint) {
+        width: 120px;
+    }
+    color: $dark-gray;
+}
+
+.textarea {
+    @extend .text-input;
+    height: 10rem;
+    width: 100%;
+}
+
+.SingleDatePicker div .SingleDatePickerInput {
+    width: 100%;
+}
