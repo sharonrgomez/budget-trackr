@@ -3,8 +3,8 @@ import moment from "moment";
 import numeral from "numeral";
 import { Link } from "react-router-dom";
 
-const ExpenseListItem = ({ description, amount, createdAt, id }) => (
-    <Link className="list-item" to={`/edit/${id}`}>
+const ExpenseListItem = ({ description, amount, note, createdAt, id }) => (
+    <Link title={note} className="list-item" to={`/edit/${id}`}>
         <div>
             <h3 className="list-item__title">{description}</h3>
             <span className="list-item__subtitle">
