@@ -72,7 +72,7 @@ exports[`should render expense list with expenses 1`] = `
     <ExpenseListItem
       amount={200}
       createdAt={432000000}
-      description="medium coffee"
+      description="medium plum"
       id="2"
       key="2"
       note="food truck around the block from work"

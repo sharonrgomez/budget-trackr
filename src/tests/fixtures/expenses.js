@@ -8,7 +8,7 @@ export default [{
     createdAt: 0
 }, {
     id: "2",
-    description: "medium coffee",
+    description: "medium plum",
     note: "food truck around the block from work",
     amount: 200,
     createdAt: moment(0).add(5, "days").valueOf()

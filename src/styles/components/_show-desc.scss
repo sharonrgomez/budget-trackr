@@ -1,0 +1,41 @@
+.show-desc {
+    border: none;
+    background: transparent;
+    svg {
+        width: 1.6rem !important;
+        color: $gray;
+    }
+}
+
+.show-desc__text {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: $font-size-sm;
+    white-space: pre-wrap;
+    word-break: break-word;
+    p {
+        margin: 0;
+    }
+}
+
+.show-desc__close {
+    display: flex;
+    justify-content: flex-end;
+    border: none;
+    background: transparent;
+}
+
+div.popup-content {
+    width: auto !important;
+    margin-right: 5rem;
+    margin-bottom: 1rem;
+    @media (max-width: $tab-breakpoint) {
+        div.popup-arrow {
+            display: none;
+        }
+    }
+    @media (max-width: $mobile-breakpoint) {
+        left: 10% !important;
+    }
+}

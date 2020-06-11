@@ -33,6 +33,7 @@
 
 .textarea {
     @extend .text-input;
+    font-size: $font-size-md;
     height: 10rem;
     width: 100%;
     resize: vertical;

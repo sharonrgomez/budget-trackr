@@ -2,11 +2,15 @@ import React from "react";
 import moment from "moment";
 import numeral from "numeral";
 import { Link } from "react-router-dom";
+import PopUp from "../components/Popup";
 
 const ExpenseListItem = ({ description, amount, note, createdAt, id }) => (
-    <Link title={note} className="list-item" to={`/edit/${id}`}>
+    <Link className="list-item" to={`/edit/${id}`}>
         <div>
-            <h3 className="list-item__title">{description}</h3>
+            <h3 className="list-item__title">
+                {description}
+                {note && <PopUp note={note} />}
+            </h3>
             <span className="list-item__subtitle">
                 {moment(createdAt).format("MMMM Do, YYYY")}
             </span>
