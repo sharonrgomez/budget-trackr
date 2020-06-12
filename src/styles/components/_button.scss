@@ -8,13 +8,37 @@
     display: inline-block;
     text-decoration: none;
     line-height: 1;
+    border-radius: 5px;
+    &:hover {
+        background: darken($color: $lavender, $amount: 10%);
+    }
+    &:focus {
+        background: darken($color: $lavender, $amount: 20%);
+    }
+}
+
+.box-layout__box .button {
+    box-shadow: 1.5px 1.5px 4px #727272;
 }
 
 .button__link {
     background: none;
+    &:hover {
+        background: none;
+        color: $light-gray;
+    }
+    &:focus {
+        background: none;
+    }
 }
 
 .button__secondary {
     background: $gray;
     margin-left: 1rem;
+    &:hover {
+        background: darken($color: $gray, $amount: 10%);
+    }
+    &:focus {
+        background: darken($color: $gray, $amount: 20%);
+    }
 }
