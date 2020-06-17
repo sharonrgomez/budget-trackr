@@ -9,6 +9,9 @@
         margin: 0;
         cursor: pointer;
     }
+    @media (max-width: $mobile-breakpoint) {
+        font-size: $font-size-sm;
+    }
 }
 
 .header__content {
@@ -16,4 +19,15 @@
     justify-content: space-between;
     align-items: center;
     padding: $s-size 0;
+    a {
+        color: white;
+        @media (max-width: $mobile-breakpoint) {
+            font-size: $font-size-sm;
+        }
+    }
+    button {
+        @media (max-width: $mobile-breakpoint) {
+            font-size: $font-size-sm;
+        }
+    }
 }
