@@ -11,7 +11,7 @@ export const Header = ({ startLogout }) => (
             <div className="header__content">
                 <Link className="header__title" to="/dashboard"><h1>budget trackr</h1></Link>
                 <div>
-                    <a href="https://github.com/shaerins" target="_blank"><FontAwesomeIcon className="header-icon" icon={faCode} /></a>
+                    <a href="https://github.com/sharonrgomez" target="_blank"><FontAwesomeIcon className="header-icon" icon={faCode} /></a>
                     <button className="button button__link" onClick={startLogout}>Logout</button>
                 </div>
             </div>
