@@ -1,6 +1,8 @@
 # budget-trackr
 Manage your bills &amp; expenses
 
+<img width="1512" alt="Screenshot 2024-04-15 at 9 34 50 PM" src="https://github.com/sharonrgomez/budget-trackr/assets/22580495/c2f3bf9c-1412-4bfe-98dd-9aa0235fc621">
+
 ## View
 
 [https://budgettrackr.herokuapp.com/](https://budgettrackr.herokuapp.com/)
